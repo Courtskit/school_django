@@ -3,4 +3,7 @@ from django.db import models
 class Student(models.Model):
     name = models.CharField(max_length=64)
     email = models.EmailField(max_length=128)
-    birthdate = models.DateField(default=None, null=True)
+    birthdate = models.DateField(default=None, null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.name}"
